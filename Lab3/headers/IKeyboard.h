@@ -10,15 +10,7 @@
 namespace entity {
     class IKeyboard {
     public:
-        virtual void PressKey(const std::string &key) = 0;
-
-        virtual void PressKeys(const std::string &keys) = 0;
-
-        virtual void printWorkflow() = 0;
-
-        virtual void printCommandList() = 0;
-
-        virtual void reassignKey(const std::string &key, const std::string &command) = 0;
+        virtual void launch() = 0;
     };
 }
 

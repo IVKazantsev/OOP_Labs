@@ -10,15 +10,13 @@
 namespace entity {
     class IWorkflow {
     public:
-        virtual void enroll(const std::string &key, const std::string &appointment) = 0;
-
-        virtual void printPressing() = 0;
-
-        virtual void printWorkflow() = 0;
-
         virtual void printCommandList() = 0;
 
+        virtual std::string getAction(const std::string &key) = 0;
+
         virtual void reassignKey(const std::string &key, const std::string &command) = 0;
+
+        virtual void launch() = 0;
     };
 }
 

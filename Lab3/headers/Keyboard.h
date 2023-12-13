@@ -16,15 +16,7 @@ namespace entity {
     public:
         explicit Keyboard(Workflow workflow);
 
-        void PressKey(const std::string &key) override;
-
-        void PressKeys(const std::string &keys) override;
-
-        void printWorkflow() override;
-
-        void printCommandList() override;
-
-        void reassignKey(const std::string &key, const std::string &command) override;
+        void launch() override;
 
     private:
         Workflow m_workflow;
