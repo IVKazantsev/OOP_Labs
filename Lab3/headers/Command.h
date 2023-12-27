@@ -5,22 +5,16 @@
 #ifndef VIRTUAL_KEYBOARD_COMMAND_H
 #define VIRTUAL_KEYBOARD_COMMAND_H
 
-#include "ICommand.h"
+#include <string>
 
 namespace entity {
-    class Command : public ICommand {
+    class Command {
     public:
-        Command(std::string key, std::string action);
+        virtual void execute() = 0;
 
-        std::string getKey() override;
+        virtual void undo() = 0;
 
-        std::string getAction() override;
-
-        void setKey(const std::string &key) override;
-
-    private:
-        std::string m_key;
-        std::string m_action;
+        virtual std::string getAction() = 0;
     };
 }
 

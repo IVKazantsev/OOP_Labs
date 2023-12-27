@@ -5,21 +5,28 @@
 #ifndef VIRTUAL_KEYBOARD_KEYBOARD_H
 #define VIRTUAL_KEYBOARD_KEYBOARD_H
 
-#include "IKeyboard.h"
-#include "Workflow.h"
+#include "Command.h"
+#include "Key.h"
 
-#include <iostream>
 #include <string>
+#include <vector>
 
 namespace entity {
-    class Keyboard : public IKeyboard {
+    class Keyboard {
     public:
-        explicit Keyboard(Workflow workflow);
+        Keyboard();
 
-        void launch() override;
+        void undo();
+
+        void addKey(const Key &key);
+
+        void press(const std::string &key);
+
+        void reassignKey(const std::string &key, Command *command);
 
     private:
-        Workflow m_workflow;
+        std::vector<Key> m_keyList;
+        std::vector<Key> m_sequencing;
     };
 }
 
